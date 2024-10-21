@@ -41,8 +41,10 @@ def check_diabetes():
         print(prediction_input)
         logging.debug("Prediction Input : %s", prediction_input)
         df = pd.read_json(StringIO(json.dumps(prediction_input)), orient='records')
-        status = dp.predict_single_record(df)
-
+        
+        status,number = dp.predict_single_record(df)
+        print(status)
+        print(number)
         return render_template("response_page.html",
                                prediction_variable=status[0])
 

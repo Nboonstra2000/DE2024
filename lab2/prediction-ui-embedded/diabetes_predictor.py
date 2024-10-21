@@ -11,5 +11,5 @@ class DiabetesPredictor:
         print(df)
         y_pred = self.model.predict(df)
         logging.info("Prediction Output : %s", y_pred[0])
-        status = (y_pred[0] > 15)
-        return status
+        status = (y_pred[0] < 15)
+        return status , y_pred
