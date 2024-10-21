@@ -4,9 +4,12 @@
 </head>
 <body>
 
-{% if prediction_variable <3 %}
+{% if prediction_variable > 8 %}
     <p>It is likely this is good wine.</p>
-{% else %}
+    
+{% elif prediction_variable > 5 %%}
+    <p>It is likely this is medium wine.</p>
+{% else%}
     <p>It is likely this is bad wine.</p>
 {% endif %}
 </body>
