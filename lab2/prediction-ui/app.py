@@ -17,19 +17,37 @@ def check_diabetes():
         return render_template("input_form_page.html")
 
     elif request.method == "POST":
+        # Collect the input data from the form (features for the wine prediction)
+        """ prediction_input = [
+            {
+                "fixed_acidity": float(request.form.get("fixed_acidity")),  # getting input with name = fixed_acidity in HTML form
+                "volatile_acidity": float(request.form.get("volatile_acidity")),  # getting input with name = volatile_acidity in HTML form
+                "citric_acid": float(request.form.get("citric_acid")),
+                "residual_sugar": float(request.form.get("residual_sugar")),
+                "chlorides": float(request.form.get("chlorides")),
+                "free_sulfur_dioxide": float(request.form.get("free_sulfur_dioxide")),
+                "total_sulfur_dioxide": float(request.form.get("total_sulfur_dioxide")),
+                "density": float(request.form.get("density")),
+                "pH": float(request.form.get("pH")),
+                "sulphates": float(request.form.get("sulphates")),
+                "alcohol": float(request.form.get("alcohol"))
+            }
+        ] """
         prediction_input = [
             {
-                "ntp": int(request.form.get("ntp")),  # getting input with name = ntp in HTML form
-                "pgc": int(request.form.get("pgc")),  # getting input with name = pgc in HTML form
-                "dbp": int(request.form.get("dbp")),
-                "tsft": int(request.form.get("tsft")),
-                "si": int(request.form.get("si")),
-                "bmi": float(request.form.get("bmi")),
-                "dpf": float(request.form.get("dpf")),
-                "age": int(request.form.get("age"))
+                "fixed_acidity": float(request.form.get("fixed_acidity")),  # getting input with name = fixed_acidity in HTML form
+                "volatile_acidity": 1,  # getting input with name = volatile_acidity in HTML form
+                "citric_acid": 1,
+                "residual_sugar": 1,
+                "chlorides": 1,
+                "free_sulfur_dioxide": 1,
+                "total_sulfur_dioxide": 1,
+                "density": 1,
+                "pH": 1,
+                "sulphates": 1,
+                "alcohol": 1
             }
-        ]
-
+        ] 
         logging.debug("Prediction input : %s", prediction_input)
 
         # use requests library to execute the prediction service API by sending an HTTP POST request
