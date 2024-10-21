@@ -25,8 +25,8 @@ def check_diabetes():
     elif request.method == "POST":
         prediction_input = [
             {
-                "fixed_acidity": float(request.form.get("ntp")),  # getting input with name = fixed_acidity in HTML form
-                "volatile_acidity": float(request.form.get("pgc")),  # getting input with name = volatile_acidity in HTML form
+                "fixed_acidity": float(request.form.get("fixed_acidity")),  # getting input with name = fixed_acidity in HTML form
+                "volatile_acidity": float(request.form.get("volatile_acidity")),  # getting input with name = volatile_acidity in HTML form
                 "citric_acid": 1,
                 "residual_sugar": 1,
                 "chlorides": 1,
