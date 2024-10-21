@@ -27,15 +27,15 @@ def check_diabetes():
             {
                 "fixed_acidity": float(request.form.get("fixed_acidity")),  # getting input with name = fixed_acidity in HTML form
                 "volatile_acidity": float(request.form.get("volatile_acidity")),  # getting input with name = volatile_acidity in HTML form
-                "citric_acid": 1,
-                "residual_sugar": 1,
-                "chlorides": 1,
-                "free_sulfur_dioxide": 1,
-                "total_sulfur_dioxide": 1,
-                "density": 1,
-                "pH": 1,
-                "sulphates": 1,
-                "alcohol": 1
+                "citric_acid": float(request.form.get("citric_acid")),
+                "residual_sugar": float(request.form.get("residual_sugar")),
+                "chlorides": float(request.form.get("chlorides")),
+                "free_sulfur_dioxide": float(request.form.get("free_sulfur_dioxide")),
+                "total_sulfur_dioxide": float(request.form.get("total_sulfur_dioxide")),
+                "density": float(request.form.get("density")),
+                "pH": float(request.form.get("pH")),
+                "sulphates": float(request.form.get("sulphates")),
+                "alcohol": float(request.form.get("alcohol"))
             }
         ] 
         print(prediction_input)
