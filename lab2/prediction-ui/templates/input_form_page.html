@@ -1,38 +1,24 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Diabetes Check Form</title>
+    <title>Wine Quality Prediction</title>
 </head>
 <body>
-
-<form action="/checkdiabetes" method="POST">
-    <h1> Check My Diabetes</h1>
-    <label for="ntp">Number of times pregnant:</label>
-    <input type="text" id="ntp" name="ntp" placeholder="ntp"> <br>
-
-    <label for="pgc">Plasma glucose concentration a 2 hours in an oral glucose tolerance test:</label>
-    <input type="text" id="pgc" name="pgc" placeholder="pgc"> <br>
-
-    <label for="dbp">Diastolic blood pressure (mm Hg):</label>
-    <input type="text" id="dbp" name="dbp" placeholder="dbp"> <br>
-
-    <label for="tsft">Triceps skin fold thickness (mm):</label>
-    <input type="text" id="tsft" name="tsft" placeholder="tsft"> <br>
-
-    <label for="si">2-Hour serum insulin (mu U/ml):</label>
-    <input type="text" id="si" name="si" placeholder="si"> <br>
-
-    <label for="bmi">Body mass index:</label>
-    <input type="text" id="bmi" name="bmi" placeholder="bmi"> <br>
-
-    <label for="dpf">Diabetes pedigree function:</label>
-    <input type="text" id="dpf" name="dpf" placeholder="dpf"> <br>
-
-    <label for="age">Age (years):</label>
-    <input type="text" id="age" name="age" placeholder="age"> <br>
-    <p><input type='submit' value='Check'/></p>
-</form>
-
+    <h2>Enter Wine Characteristics</h2>
+    <form action="/" method="POST">
+        <label>Fixed Acidity: </label><input type="text" name="fixed_acidity"><br>
+        <label>Volatile Acidity: </label><input type="text" name="volatile_acidity"><br>
+<!--         <label>Citric Acid: </label><input type="text" name="citric_acid"><br>
+        <label>Residual Sugar: </label><input type="text" name="residual_sugar"><br>
+        <label>Chlorides: </label><input type="text" name="chlorides"><br>
+        <label>Free Sulfur Dioxide: </label><input type="text" name="free_sulfur_dioxide"><br>
+        <label>Total Sulfur Dioxide: </label><input type="text" name="total_sulfur_dioxide"><br>
+        <label>Density: </label><input type="text" name="density"><br>
+        <label>pH: </label><input type="text" name="pH"><br>
+        <label>Sulphates: </label><input type="text" name="sulphates"><br>
+        <label>Alcohol: </label><input type="text" name="alcohol"><br> -->
+        <br>
+        <input type="submit" value="Predict Wine Quality">
+    </form>
 </body>
 </html>
-
-<!-- check https://flask.palletsprojects.com/en/2.3.x/tutorial/templates/ for information if needed -->
