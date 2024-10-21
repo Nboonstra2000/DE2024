@@ -46,7 +46,7 @@ def check_diabetes():
         print(status)
         print(number)
         return render_template("response_page.html",
-                               prediction_variable=status[0])
+                               prediction_variable=number[0])
 
     else:
         return jsonify(message="Method Not Allowed"), 405  # The 405 Method Not Allowed should be used to indicate
