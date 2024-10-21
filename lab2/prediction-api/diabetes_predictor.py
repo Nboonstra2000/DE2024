@@ -24,12 +24,11 @@ class DiabetesPredictor:
                 self.model = load_model('model.h5')
 
         df = pd.read_json(StringIO(json.dumps(prediction_input)), orient='records')
-        print(df)
-        scaler = StandardScaler()
-        test_instance_scaled = scaler.transform(df)
-        y_pred = self.model.predict(test_instance_scaled)
+        #scaler = StandardScaler()
+        #test_instance_scaled = scaler.transform(df)
+        y_pred = self.model.predict(df)
         logging.info(y_pred[0])
-        status = (y_pred[0] > 5)
+        status = (y_pred[0] > 10)
         logging.info(type(status[0]))
         # return the prediction outcome as a json message. 200 is HTTP status code 200, indicating successful completion
         return jsonify({'result': str(status[0])}), 200
