@@ -24,6 +24,7 @@ class DiabetesPredictor:
                 self.model = load_model('model.h5')
 
         df = pd.read_json(StringIO(json.dumps(prediction_input)), orient='records')
+        print(df)
         scaler = StandardScaler()
         test_instance_scaled = scaler.transform(df)
         y_pred = self.model.predict(test_instance_scaled)

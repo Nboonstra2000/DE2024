@@ -48,6 +48,7 @@ def check_diabetes():
                 "alcohol": 1
             }
         ] 
+        print(prediction_input)
         logging.debug("Prediction input : %s", prediction_input)
 
         # use requests library to execute the prediction service API by sending an HTTP POST request
@@ -56,7 +57,7 @@ def check_diabetes():
         # json.loads() method can be used to parse a valid JSON string and convert it into a Python Dictionary.
         predictor_api_url = os.environ['PREDICTOR_API']
         res = requests.post(predictor_api_url, json=json.loads(json.dumps(prediction_input)))
-
+        
         prediction_value = res.json()['result']
         logging.info("Prediction Output : %s", prediction_value)
         return render_template("response_page.html",
