@@ -12,6 +12,7 @@ app.config["DEBUG"] = True
 def predict_str():
     # the prediction input data in the message body as a JSON payload
     prediction_inout = request.get_json()
+    print(prediction_inout)
     return dp.predict_single_record(prediction_inout)
 
 
