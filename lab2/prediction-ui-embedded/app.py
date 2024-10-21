@@ -25,16 +25,20 @@ def check_diabetes():
     elif request.method == "POST":
         prediction_input = [
             {
-                "ntp": int(request.form.get("ntp")),  # getting input with name = ntp in HTML form
-                "pgc": int(request.form.get("pgc")),  # getting input with name = pgc in HTML form
-                "dbp": int(request.form.get("dbp")),
-                "tsft": int(request.form.get("tsft")),
-                "si": int(request.form.get("si")),
-                "bmi": float(request.form.get("bmi")),
-                "dpf": float(request.form.get("dpf")),
-                "age": int(request.form.get("age"))
+                "fixed_acidity": float(request.form.get("ntp")),  # getting input with name = fixed_acidity in HTML form
+                "volatile_acidity": float(request.form.get("pgc")),  # getting input with name = volatile_acidity in HTML form
+                "citric_acid": 1,
+                "residual_sugar": 1,
+                "chlorides": 1,
+                "free_sulfur_dioxide": 1,
+                "total_sulfur_dioxide": 1,
+                "density": 1,
+                "pH": 1,
+                "sulphates": 1,
+                "alcohol": 1
             }
-        ]
+        ] 
+        print(prediction_input)
         logging.debug("Prediction Input : %s", prediction_input)
         df = pd.read_json(StringIO(json.dumps(prediction_input)), orient='records')
         status = dp.predict_single_record(df)

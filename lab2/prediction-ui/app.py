@@ -50,14 +50,14 @@ def check_diabetes():
         ] 
         print(prediction_input)
         logging.debug("Prediction input : %s", prediction_input)
-        logging.info("Prediction input : %s", prediction_input)
+
         # use requests library to execute the prediction service API by sending an HTTP POST request
         # use an environment variable to find the value of the diabetes prediction API
         # json.dumps() function will convert a subset of Python objects into a json string.
         # json.loads() method can be used to parse a valid JSON string and convert it into a Python Dictionary.
-        predictor_api_url = os.environ['PREDICTOR_API']
+        predictor_api_url = 'http://127.0.0.1:5001/diabetes_predictor/'
         res = requests.post(predictor_api_url, json=json.loads(json.dumps(prediction_input)))
-
+        print(res)
         prediction_value = res.json()['result']
         logging.info("Prediction Output : %s", prediction_value)
         return render_template("response_page.html",
@@ -72,4 +72,4 @@ def check_diabetes():
 # The code within this conditional block will only run the python file is executed as a
 # script. See https://realpython.com/if-name-main-python/
 if __name__ == '__main__':
-    app.run(port=int(os.environ.get("PORT", 5000)), host='0.0.0.0', debug=True)
+    app.run(port=int(os.environ.get("PORT", 5001)), host='0.0.0.0', debug=True)
